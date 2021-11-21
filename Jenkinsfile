@@ -1,15 +1,15 @@
 pipeline {
    agent any
-   
+
    stages {
       stage('Build') {
          steps {
             sh 'rm -rf build' 
             sh 'mkdir build' // create a new folder
             sh 'touch build/car.txt' // create an empty file
-            sh 'echo "chassis" > build/car.txt' // add chassis
-            sh 'echo "engine" > build/car.txt' // add engine
-            sh 'echo "body" > build/car.txt' // body
+            sh 'echo "chassis" >> build/car.txt' // add chassis
+            sh 'echo "engine" >> build/car.txt' // add engine
+            sh 'echo "body" >> build/car.txt' // body
          }
       }
       stage('Test') {
